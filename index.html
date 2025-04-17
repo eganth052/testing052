@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My CooL SiTe!</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: #000033;
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            color: #00FF00;
+        }
+        #container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+        #stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        #content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding-top: 20vh;
+        }
+        h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00;
+            animation: neon 1.5s infinite alternate;
+        }
+        .blink {
+            animation: blinker 1s linear infinite;
+        }
+        @keyframes blinker {
+            50% { opacity: 0; }
+        }
+        @keyframes neon {
+            from {
+                text-shadow: 0 0 10px #00FF00, 0 0 20px #00FF00;
+            }
+            to {
+                text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00, 0 0 15px #00FF00, 0 0 20px #00FF00, 0 0 30px #00FF00;
+            }
+        }
+        .menu {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+        .menu-item {
+            margin: 0 15px;
+            font-size: 20px;
+            text-decoration: none;
+            color: #FFFF00;
+            text-shadow: 2px 2px 4px #FF00FF;
+            position: relative;
+        }
+        .menu-item:hover {
+            color: #FF00FF;
+        }
+        .menu-item::before {
+            content: ">>>";
+            position: absolute;
+            left: -30px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .menu-item:hover::before {
+            opacity: 1;
+        }
+        #banner {
+            margin: 20px auto;
+            width: 500px;
+            height: 150px;
+            background: linear-gradient(to right, #FF0000, #FF7F00, #FFFF00, #00FF00, #0000FF, #4B0082, #8B00FF);
+            padding: 10px;
+            border: 3px solid white;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+            animation: rainbow-border 2s infinite;
+        }
+        @keyframes rainbow-border {
+            0% { border-color: #FF0000; }
+            14% { border-color: #FF7F00; }
+            28% { border-color: #FFFF00; }
+            42% { border-color: #00FF00; }
+            57% { border-color: #0000FF; }
+            71% { border-color: #4B0082; }
+            85% { border-color: #8B00FF; }
+            100% { border-color: #FF0000; }
+        }
+        .construction {
+            margin: 20px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .construction img {
+            margin: 0 10px;
+            animation: rotate 2s infinite linear;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        #visitor-counter {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            background-color: #333;
+            color: #00FF00;
+            padding: 5px 10px;
+            border: 1px solid #00FF00;
+            font-family: "Courier New", monospace;
+        }
+        #footer {
+            position: fixed;
+            bottom: 5px;
+            width: 100%;
+            text-align: center;
+            font-size: 12px;
+            color: #888;
+        }
+        #cursor-trail {
+            position: absolute;
+            pointer-events: none;
+            z-index: 9999;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <canvas id="stars"></canvas>
+        <div id="content">
+            <h1>W3LC0M3 TO MY EP1C S1TE</h1>
+            <div class="blink" style="font-size: 20px; margin-bottom: 20px;">⭐ BEST VIEWED IN 800x600 ⭐</div>
+            
+            <div class="menu">
+                <a href="index.html" class="menu-item">Home</a>
+                <a href="about.html" class="menu-item">About Me</a>
+                <a href="links.html" class="menu-item">Cool Links</a>
+                <a href="guestbook.html" class="menu-item">Guestbook</a>
+            </div>
+            
+            <div id="banner">
+                UNDER CONSTRUCTION
+            </div>
+            
+            <div class="construction">
+                <img src="https://web.archive.org/web/20091027065831/http://www.geocities.com/Area51/Zone/6210/con-ani.gif" alt="Construction" width="30" height="30">
+                <p>Welcome to my AWESOME website! It's still under construction but feel free to look around!</p>
+                <img src="https://web.archive.org/web/20091027065831/http://www.geocities.com/Area51/Zone/6210/con-ani.gif" alt="Construction" width="30" height="30">
+            </div>
+        </div>
+        
+        <div id="visitor-counter">Visitors: 1,337</div>
+        
+        <div id="cursor-trail"></div>
+        
+        <div id="footer">© 2002 Cool Website Productions. Made with Notepad. Best viewed in Internet Explorer 6.0</div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
